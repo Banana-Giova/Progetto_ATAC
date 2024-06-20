@@ -1,9 +1,10 @@
 body {
-    background-color: silver;
+    background-color: rgb(190, 190, 190);
     margin: 0px;
+    
 }
 .nav_bar ul{
-    background-color: rgb(211, 95, 95);
+    background-color: rgb(210, 95, 95);
     list-style-type: none;
     padding: 10px;
     margin: 0px;
@@ -21,6 +22,7 @@ body {
     padding: 25px;
     display: block;
     text-align: center;
+    font-family: sans-serif;
     
 } 
 .nav_bar a:hover{
@@ -33,6 +35,7 @@ main{
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
+    font-family: sans-serif;
 
 }
 
