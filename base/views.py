@@ -12,24 +12,27 @@ from .models import Passenger
 
     def post(self,request):
         return render(request, "home.html")"""
+# Class based view
 
 bus_lines = [
     {'id': 1, 'line_number': 451, 'name': 'Ponte Mammolo', 'stops': 18},
     {'id': 2, 'line_number': 558, 'name': 'Gardenie', 'stops': 29},
     {'id': 3, 'line_number': 777, 'name': 'Agricoltura', 'stops': 42},
 ]
+# Static pseuo-DB list
 
 def home(request):
     context = {'bus_lines': bus_lines}
     return render(request, "base/home.html", context)
 
 def bus(request, line_number):
+    #bus = Bus.objects.get(line_number=line_number)
     req_bus = None
     for bus in bus_lines:
         if bus['line_number'] == int(line_number):
             req_bus = bus
             break
-    context = {'bus':bus}
+    context = {'bus':req_bus}
     return render(request, "base/bus.html", context)
 
 def passengers(request):
