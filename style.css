@@ -1,0 +1,44 @@
+body {
+    background-color: silver;
+    margin: 0px;
+}
+.nav_bar ul{
+    background-color: rgb(211, 95, 95);
+    list-style-type: none;
+    padding: 10px;
+    margin: 0px;
+    overflow: hidden;
+    
+}
+.nav_bar img{
+    width: 90px;
+}
+
+.nav_bar a{
+    width: 25px;
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    display: block;
+    text-align: center;
+    
+} 
+.nav_bar a:hover{
+    color: black;
+}
+.nav_bar li {
+    float: left;
+}
+main{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+/* : hover mi gestice il comportamento del bottone con il cursore sopre*/
+.login button:hover {
+    background-color:black;
+    color: white;
+}
+
