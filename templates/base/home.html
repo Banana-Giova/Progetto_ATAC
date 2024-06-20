@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>~Azienda per la mobilità~</h1>
+
+
+
+<div>
+
+    <div>
+        {% for bus_line in bus_lines %}
+
+            <div>
+                <h3>Linea {{bus_line.line_number}} | <a href='{% url "bus" bus_line.line_number %}'>{{bus_line.name}}</a> -- Stops => {{bus_line.stops}}</h3>
+            </div>
+
+        {% endfor %}
+    </div>
+    <p>--------------------------------------------------</p>
+    <h3><a href='{% url "passengers" %}'>Lista Passeggeri</a></h3>
+
+</div>
+
+{% endblock content %}
