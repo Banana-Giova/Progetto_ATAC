@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>~Lista Passeggeri~</h1>
+
+
+
+<div>
+    {% for dude in passengers_list %}
+
+        <div>
+            <h3>ID Passeggero: <a href= "{% url 'passenger' dude.passenger_id  %}">{{dude.passenger_id}}</a></h3>
+            <hr>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+
+<h1>Linea {{line.line_number}} | {{line.name}}</h1>
+<hr>
+<h2>Stops => {{line.stops}}</h2>
+<div>
+    <a href="{% url 'delete-line' line.line_number %}">Elimina</a>
+<div>
+{% endblock content %}

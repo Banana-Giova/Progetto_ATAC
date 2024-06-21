@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>ID Guidatore: {{driver.driver_id}}</h1>
+<hr>
+<h1>Nome: {{driver.name}}</h1>
+<hr>
+<h1>Cognome: {{driver.surname}}</h1>
+<hr>
+<h1>Bus Assegnato: {{driver.assigned_bus}}</h1>
+<div>
+    <a href="{% url 'delete-driver' driver.driver_id %}">Elimina</a>
+<div>
+{% endblock content %}

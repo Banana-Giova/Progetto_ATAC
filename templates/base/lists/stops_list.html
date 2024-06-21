@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>~Lista Stops~</h1>
+
+
+
+<div>
+    {% for stop in stops_list %}
+
+        <div>
+            <h1>ID Stop: <a href= "{% url 'stop' stop.stop_id  %}">{{stop.stop_id}}</a></h1>
+            <h3> Linee: {{stop.lines}}</h3>
+            <hr>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

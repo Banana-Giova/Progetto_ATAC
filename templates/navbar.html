@@ -1,5 +1,15 @@
-<a href="/">
-    <h1>ATAC S.p.A.</h1>
-</a>
-
-<hr>
+<nav class="nav_bar">
+    
+    <ul class="ul_nav">
+        {% load static %}
+        <img src='{% static "main.css" %}' alt="">
+        <li><img src='{% static "images/Logo_ATAC.png" %}' alt="Logo ATAC"></li>
+        <li><a href="/">Home</a></li>
+        <li><a href='{% static "images/9001_scioperi.gif" %}' target="_blank">Scioperi</a></li>
+        <li><a href='{% url "stops_list" %}'>Stops</a></li>
+        <li><a href='{% url "bus_list" %}'>Bus</a></li>
+        <li><a href='{% url "passengers_list" %}'>Passeggeri</a></li>
+        <li><a href='{% url "drivers_list" %}'>Guidatori</a></li>
+        
+    </ul>
+</nav>

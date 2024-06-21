@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>ID Stop: {{stop.stop_id}} | Nome: {{stop.name}}</h1>
+<hr>
+<h2>Latitudine: {{stop.latitude}}</h2>
+<h2>Longitudine: {{stop.longitude}}</h2>
+<hr>
+<h3>Linee: {{stop.lines}}</h3>
+<hr>
+<div>
+    <a href="{% url 'delete-stop' stop.stop_id %}">Elimina</a>
+<div>
+{% endblock content %}
