@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>ID Guidatore: {{passenger.passenger_id}}</h1>
+<hr>
+<h1>Nome: {{passenger.name}}</h1>
+<hr>
+<h1>Cognome: {{passenger.surname}}</h1>
+<div>
+    <a href="{% url 'delete-passenger' dude.passenger_id %}">Elimina</a>
+<div>
+{% endblock content %}

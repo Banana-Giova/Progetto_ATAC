@@ -10,16 +10,25 @@
 <div>
 
     <div>
-        {% for bus_line in bus_lines %}
+        {% for line in bus_lines %}
 
             <div>
-                <h3>Linea {{bus_line.line_number}} | <a href='{% url "bus" bus_line.line_number %}'>{{bus_line.name}}</a> -- Stops => {{bus_line.stops}}</h3>
+                <h3>Linea {{line.line_number}} | <a href='{% url "line" line.line_number %}'>{{line.name}}</a> -- Stops => {{line.stops}}</h3>
+                <hr>
             </div>
 
         {% endfor %}
     </div>
-    <hr>
-    <h3><a href='{% url "passengers" %}'>Lista Passeggeri</a></h3>
+    
+    <h3><a href="{% url 'create-line' %}">Make a Line!</a></h3> 
+    -----------------------
+    <h3><a href="{% url 'create-bus' %}">Make a Bus!</a></h3>
+    -----------------------
+    <h3><a href="{% url 'create-stop' %}">Make a Stop!</a></h3>
+    -----------------------
+    <h3><a href="{% url 'create-passenger' %}">Make a Passenger!</a></h3>
+    -----------------------
+    <h3><a href="{% url 'create-driver' %}">Make a Driver!</a></h3>
 
 </div>
 
