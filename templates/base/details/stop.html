@@ -8,7 +8,15 @@
 <h2>Latitudine: {{stop.latitude}}</h2>
 <h2>Longitudine: {{stop.longitude}}</h2>
 <hr>
-<h3>Linee: {{stop.lines}}</h3>
+<h2>Linee: 
+    {% for combo in ordinatac %}
+        {% if combo.stop == stop %}
+            <div>
+                <h4>{{combo.line}}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+</h2>
 <hr>
 <div>
     <button>
