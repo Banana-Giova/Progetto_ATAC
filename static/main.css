@@ -14,6 +14,7 @@ a{
 }
 a:hover{
     color: white;
+    background: linear-gradient(to right, green 33%, white 33%, white 66%, red 66%);
 }
 
 .nav_bar ul{
