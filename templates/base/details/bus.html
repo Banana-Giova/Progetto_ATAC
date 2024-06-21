@@ -8,7 +8,10 @@
 <hr>
 <h2>Capacità: {{bus.capacity}} | Passeggeri: {{bus.passengers}}</h2>
 <div>
-    <a href="{% url 'delete-bus' bus.bus_id %}">Elimina</a>
+    <button>
+        <a href="{% url 'delete-bus' bus.bus_id %}">Elimina</a>
+    </button>
+    
 <div>
 
 {% endblock content %}

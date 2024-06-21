@@ -8,6 +8,9 @@
 <hr>
 <h2>Stops => {{line.stops}}</h2>
 <div>
-    <a href="{% url 'delete-line' line.line_number %}">Elimina</a>
+    <button>
+        <a href="{% url 'delete-line' line.line_number %}">Elimina</a>
+    </button>
+    
 <div>
 {% endblock content %}

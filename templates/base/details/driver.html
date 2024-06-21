@@ -11,6 +11,8 @@
 <hr>
 <h1>Bus Assegnato: {{driver.assigned_bus}}</h1>
 <div>
-    <a href="{% url 'delete-driver' driver.driver_id %}">Elimina</a>
+    <button>
+        <a href="{% url 'delete-driver' driver.driver_id %}">Elimina</a>
+    </button>
 <div>
 {% endblock content %}

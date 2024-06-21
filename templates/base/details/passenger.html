@@ -9,6 +9,8 @@
 <hr>
 <h1>Cognome: {{passenger.surname}}</h1>
 <div>
-    <a href="{% url 'delete-passenger' dude.passenger_id %}">Elimina</a>
+    <button>
+        <a href="{% url 'delete-passenger' dude.passenger_id %}">Elimina</a>
+    </button>
 <div>
 {% endblock content %}

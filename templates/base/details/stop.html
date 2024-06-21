@@ -11,6 +11,9 @@
 <h3>Linee: {{stop.lines}}</h3>
 <hr>
 <div>
-    <a href="{% url 'delete-stop' stop.stop_id %}">Elimina</a>
+    <button>
+        <a href="{% url 'delete-stop' stop.stop_id %}">Elimina</a>
+    </button>
+    
 <div>
 {% endblock content %}
