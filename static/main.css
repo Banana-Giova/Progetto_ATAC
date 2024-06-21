@@ -12,11 +12,11 @@ body {
     
 }
 .nav_bar img{
-    width: 90px;
+    width: 100px;
 }
 
 .nav_bar a{
-    width: 25px;
+    /* width: 25px; */
     color: white;
     text-decoration: none;
     padding: 25px;
@@ -30,6 +30,8 @@ body {
 }
 .nav_bar li {
     float: left;
+    /* padding: 25px; */
+    
 }
 main{
     margin-top: 20px;
@@ -39,7 +41,7 @@ main{
 
 }
 
-/* : hover mi gestice il comportamento del bottone con il cursore sopre*/
+/* : hover mi gestice il comportamento del bottone con il cursore sopra*/
 .login button:hover {
     background-color:black;
     color: white;
