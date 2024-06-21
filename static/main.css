@@ -3,6 +3,14 @@ body {
     margin: 0px;
     
 }
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+}
+
 .nav_bar ul{
     background-color: rgb(210, 95, 95);
     list-style-type: none;
@@ -15,7 +23,7 @@ body {
     width: 100px;
 }
 
-.nav_bar a{
+.nav_bar a:not(.no-style){
     /* width: 25px; */
     color: white;
     text-decoration: none;
