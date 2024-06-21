@@ -12,6 +12,10 @@ a{
     color: rgb(95, 15, 15);
     text-decoration: none;
 }
+a:hover{
+    color: rgb(170, 120, 120);
+    text-decoration: none;
+}
 /*a:hover{
 
     background: linear-gradient(to right, green 33%, white 33%, white 66%, red 66%);
