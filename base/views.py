@@ -22,6 +22,9 @@ def success(request):
 def create(request):
     return render(request, 'base/create.html')
 
+def scioperi(request):
+    return render(request, 'base/extra_stuff/scioperi.html')
+
 
 
 #-----List Pages-----#
