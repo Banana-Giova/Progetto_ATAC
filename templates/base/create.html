@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+
+    <h3><a href="{% url 'create-line' %}">Crea una Linea!</a></h3> 
+    <hr>
+    <h3><a href="{% url 'create-bus' %}">Crea un Bus!</a></h3>
+    <hr>
+    <h3><a href="{% url 'create-stop' %}">Crea uno Stop!</a></h3>
+    <hr>
+    <h3><a href="{% url 'create-passenger' %}">Crea un Passeggero!</a></h3>
+    <hr>
+    <h3><a href="{% url 'create-driver' %}">Crea un Conducente!</a></h3>
+
+{% endblock content %}

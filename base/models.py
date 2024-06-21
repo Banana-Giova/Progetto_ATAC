@@ -34,7 +34,7 @@ class OrdinATAC(models.Model):
     stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
 
 class Bus(models.Model):
-    bus_id:str = models.CharField(max_length=3, db_index=True, unique=True)
+    bus_id:str = models.CharField(max_length=4, db_index=True, unique=True)
     line = models.ForeignKey(Line, null=True, on_delete=models.CASCADE)
     capacity = models.IntegerField()
     passengers = models.ManyToManyField(Passenger)

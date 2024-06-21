@@ -7,13 +7,7 @@ from .forms import *
 
 # Create your views here.
 
-"""class Home(View):
-    def get(self, request):
-        return render(request, "home.html")
 
-    def post(self,request):
-        return render(request, "home.html")"""
-# Class based view
 
 #-----Basic Pages-----#
 
@@ -24,6 +18,11 @@ def home(request):
 
 def success(request):
     return render(request, 'base/success.html')
+
+def create(request):
+    return render(request, 'base/create.html')
+
+
 
 #-----List Pages-----#
 
@@ -46,6 +45,8 @@ def drivers_list(request):
     drivers = Driver.objects.all()
     context = {'drivers':drivers}
     return render(request, "base/lists/drivers_list.html", context)
+
+
 
 #-----Detail Pages-----#
 
@@ -73,6 +74,8 @@ def driver(request, driver_id):
     req_driver = Driver.objects.get(driver_id=driver_id)
     context = {'driver':req_driver}
     return render(request, "base/details/driver.html", context)
+
+
 
 #-----Creation Tool Forms-----#
 
@@ -125,6 +128,8 @@ def create_driver(request):
             return redirect('success')
     context = {'form': form}
     return render(request, 'base/forms/driver_form.html', context)
+
+
 
 #-----Deletion Tool Forms-----#
 

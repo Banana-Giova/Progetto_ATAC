@@ -22,8 +22,6 @@
 
 6. File Statici
 
-- Includere CSS per stilizzare i template HTML.
-
 - Eventualmente includere JavaScript per migliorare l'interattività.
 
 7. Testing

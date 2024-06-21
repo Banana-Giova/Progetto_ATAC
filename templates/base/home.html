@@ -3,32 +3,21 @@
 
 
 {% block content %}
-<h1>~Azienda per la mobilità~</h1>
-
-
-
 <div>
-
+    <h2>Linee Attive</h2>
+    -----------------------------
     <div>
         {% for line in bus_lines %}
 
             <div>
-                <h3>Linea {{line.line_number}} | <a href='{% url "line" line.line_number %}'>{{line.name}}</a> -- Stops => {{line.stops}}</h3>
+                <h3>Linea {{line.line_number}} | <a href='{% url "line" line.line_number %}'>{{line.name}}</a></h3>
                 <hr>
             </div>
 
         {% endfor %}
     </div>
-    
-    <h3><a href="{% url 'create-line' %}">Crea una Linea!</a></h3> 
-    -----------------------
-    <h3><a href="{% url 'create-bus' %}">Crea un Bus!</a></h3>
-    -----------------------
-    <h3><a href="{% url 'create-stop' %}">Crea uno Stop!</a></h3>
-    -----------------------
-    <h3><a href="{% url 'create-passenger' %}">Crea un Passeggero!</a></h3>
-    -----------------------
-    <h3><a href="{% url 'create-driver' %}">Crea un Conducente!</a></h3>
+
+        <h3><a href="{% url 'create' %}">Strumento di Creazione ed Assegnazione</a></h3> 
 
 </div>
 
