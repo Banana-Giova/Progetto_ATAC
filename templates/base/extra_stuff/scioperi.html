@@ -1,7 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ATAC S.p.A.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="icon" href='{% static "images/Logo_ATAC.png" %}'>
+    <link rel="stylesheet" type="text/css" media="screen" href='{% static "main.css" %}'>
+</head>
 
-{% extends "main.html" %}
-
-{% block content %}
+<body>
+    {% include 'navbar.html' %}
+    <main>
 
 <head>
     
@@ -16,4 +27,6 @@
 
     
 </body>
-{% endblock content %}
+    </main>
+</body>
+</html>
