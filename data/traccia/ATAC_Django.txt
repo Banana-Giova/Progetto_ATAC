@@ -65,3 +65,22 @@ Criteri di Valutazione
 - Testing: Test adeguati per assicurare che tutte le funzionalità funzionino correttamente.
 
 - Documentazione
+
+
+
+-----------------------------------
+
+
+Aggiunte post call:
+
+Appunti dopo la chiamata di oggi:
+
+1) Un autista può guidare più autobus e non soltanto uno (ManyToMany)
+2) ManyToMany fra Bus e Line per un possibile future tracciamento in tempo reale degli autobus.
+3) Associazione stop-linea funziona solo lato linea (cioè mostra lo stop correttamente); viceversa, no.
+
+
+Cose minori:
+1) Qualora lo stop non fosse ancora associato ad una linea, lascia il campo vuoto e non mostrarlo
+2) Calcolare la capienza corrente sul bus una volta che i passeggeri salgono o scendono
+3) Nella vista del passeggero cambiare il titolo "ID Guidatore"
