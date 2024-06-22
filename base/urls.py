@@ -27,6 +27,12 @@ urlpatterns = [
     path('create/passenger', views.create_passenger, name="create-passenger"),
     path('create/driver', views.create_driver, name="create-driver"),
 
+#Assignment Tools paths
+    path('create/bus_to_driver/<str:driver_id>', views.bus_to_driver, name="create-bus_to_driver"),
+    path('create/line_to_bus/<str:bus_id>', views.line_to_bus, name="create-line_to_bus"),
+    path('create/passenger_on_bus/<str:bus_id>', views.passenger_on_bus, name="create-passenger_on_bus"),
+    path('create/ordinatac', views.ordinatac, name="create-ordinatac"),
+
 #Deletion Tools paths
     path('delete-line/<str:line_number>', views.delete_line, name='delete-line'),
     path('delete-bus/<str:bus_id>', views.delete_bus, name='delete-bus'),

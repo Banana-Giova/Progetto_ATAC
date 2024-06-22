@@ -6,7 +6,15 @@
 
 <h1>Linea {{line.line_number}} | {{line.name}}</h1>
 <hr>
-<h2>Stops => {{line.stops}}</h2>
+<h2>Stops: 
+    {% for combo in ordinatac %}
+        {% if combo.line == line %}
+            <div>
+                <h4>{{combo.stop}}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+</h2>
 <div>
     <button>
         <a href="{% url 'delete-line' line.line_number %}">Elimina</a>

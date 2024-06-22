@@ -3,15 +3,15 @@
 
 
 {% block content %}
-<h1>~Lista Guidatori~</h1>
+<h1>~Lista Conducenti~</h1>
 
 
 
 <div>
-    {% for dude in drivers %}
+    {% for driver in drivers_list %}
 
         <div>
-            <h3>ID Guidatore: <a href= "{% url 'driver' dude.driver_id  %}">{{dude.driver_id}}</a></h3>
+            <h3>ID Guidatore: <a href= "{% url 'driver' driver.driver_id  %}">{{driver.driver_id}}</a></h3>
             <hr>
         </div>
 

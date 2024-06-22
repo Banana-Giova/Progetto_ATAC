@@ -45,8 +45,8 @@ def stops_list(request):
     return render(request, "base/lists/stops_list.html", context)
 
 def drivers_list(request):
-    drivers = Driver.objects.all()
-    context = {'drivers':drivers}
+    drivers_list = Driver.objects.all()
+    context = {'drivers_list':drivers_list}
     return render(request, "base/lists/drivers_list.html", context)
 
 
@@ -55,17 +55,23 @@ def drivers_list(request):
 
 def line(request, line_number):
     req_line = Line.objects.get(line_number=line_number)
-    context = {'line':req_line}
+    ordinatac = OrdinATAC.objects.all()
+    context = {'line':req_line, 'ordinatac':ordinatac}
     return render(request, "base/details/line.html", context)
 
 def bus(request, bus_id):
     req_bus = Bus.objects.get(bus_id=bus_id)
-    context = {'bus':req_bus}
+    if req_bus.line != None and req_bus.line != 'Non Assegnata':
+        req_line = req_bus.line.line_number
+    else:
+        req_line = 'Non Assegnata'
+    context = {'bus':req_bus, 'line':req_line}
     return render(request, "base/details/bus.html", context)
 
 def stop(request, stop_id):
     req_stop = Stop.objects.get(stop_id=stop_id)
-    context = {'stop':req_stop}
+    ordinatac = OrdinATAC.objects.all()
+    context = {'stop':req_stop, 'ordinatac':ordinatac}
     return render(request, "base/details/stop.html", context)
 
 def passenger(request, passenger_id):
@@ -75,7 +81,11 @@ def passenger(request, passenger_id):
 
 def driver(request, driver_id):
     req_driver = Driver.objects.get(driver_id=driver_id)
-    context = {'driver':req_driver}
+    if req_driver.assigned_bus != None and req_driver.assigned_bus != 'Non Assegnato':
+        req_bus = req_driver.assigned_bus.bus_id
+    else:
+        req_bus = 'Non Assegnato'
+    context = {'driver':req_driver, 'bus':req_bus}
     return render(request, "base/details/driver.html", context)
 
 
@@ -131,6 +141,53 @@ def create_driver(request):
             return redirect('success')
     context = {'form': form}
     return render(request, 'base/forms/driver_form.html', context)
+
+
+
+#-----Assignment Tool Forms-----#
+
+def passenger_on_bus(request, bus_id):
+    bus = Bus.objects.get(bus_id=bus_id)
+    form = PassengerOnBus()
+    if request.method == 'POST':
+        form = PassengerOnBus(request.POST, instance=bus)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/passenger_on_bus.html', context)
+
+def bus_to_driver(request, driver_id):
+    driver = Driver.objects.get(driver_id=driver_id)
+    form = BusToDriver()
+    if request.method == 'POST':
+        form = BusToDriver(request.POST, instance=driver)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/bus_to_driver.html', context)
+
+def line_to_bus(request, bus_id):
+    bus = Bus.objects.get(bus_id=bus_id)
+    form = LineToBus()
+    if request.method == 'POST':
+        form = LineToBus(request.POST, instance=bus)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/line_to_bus.html', context)
+
+def ordinatac(request):
+    form = OrdinATACForm()
+    if request.method == 'POST':
+        form = OrdinATACForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/ordinatac_form.html', context)
 
 
 

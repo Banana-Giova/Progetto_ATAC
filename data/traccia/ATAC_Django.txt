@@ -1,14 +1,10 @@
 3. Viste
 
-- Assegna Conducente: Form per assegnare un conducente a un autobus.
-
 - Salita Passeggero: Funzionalità per far salire un passeggero su un autobus.
 
 - Discesa Passeggero: Funzionalità per far scendere un passeggero dall'autobus.
 
 4. Form
-
-- Creare form Django per aggiungere e rimuovere autobus.
 
 - Creare form per assegnare e rimuovere conducenti.
 
