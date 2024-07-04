@@ -12,5 +12,8 @@
     <button>
         <a href="{% url 'delete-passenger' passenger.passenger_id %}">Elimina</a>
     </button>
+    <button>
+        <a href="{% url 'disconnect-passenger' passenger.passenger_id %}">Scollega dal bus</a>
+    </button>
 <div>
 {% endblock content %}

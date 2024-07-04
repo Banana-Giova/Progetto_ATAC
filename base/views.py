@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 import django.http
 from django.views import View
-
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse
 from .models import *
 from .forms import *
 
@@ -227,3 +228,11 @@ def delete_passenger(request, passenger_id):
         passenger.delete()
         return redirect('success')
     return render(request, 'base/delete.html', {'obj':passenger})
+
+
+# disconessione passegero
+def disconnect_passenger(request, passenger_id):
+    passenger = get_object_or_404(Passenger, pk=passenger_id)
+    passenger.bus = None
+    passenger.save()
+    return redirect("/")

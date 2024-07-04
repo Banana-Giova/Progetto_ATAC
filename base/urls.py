@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import disconnect_passenger
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -39,4 +40,8 @@ urlpatterns = [
     path('delete-stop/<str:stop_id>', views.delete_stop, name='delete-stop'),
     path('delete-passenger/<str:passenger_id>', views.delete_passenger, name='delete-passenger'),
     path('delete-driver/<str:driver_id>', views.delete_driver, name='delete-driver'),
+
+#Disassociazione 
+    path('disconnect-passenger/<int:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
+
 ]
