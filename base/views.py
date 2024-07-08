@@ -192,6 +192,16 @@ def ordinatac(request):
 
 
 
+#-----Unassignment Tool Forms-----#
+
+def disconnect_passenger(request, passenger_id):
+    passenger = get_object_or_404(Passenger, pk=passenger_id)
+    passenger.bus = None
+    passenger.save()
+    return redirect('success')
+
+
+
 #-----Deletion Tool Forms-----#
 
 def delete_line(request, line_number):
@@ -228,11 +238,3 @@ def delete_passenger(request, passenger_id):
         passenger.delete()
         return redirect('success')
     return render(request, 'base/delete.html', {'obj':passenger})
-
-
-# disconessione passegero
-def disconnect_passenger(request, passenger_id):
-    passenger = get_object_or_404(Passenger, pk=passenger_id)
-    passenger.bus = None
-    passenger.save()
-    return redirect("/")

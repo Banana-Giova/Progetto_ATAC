@@ -3,17 +3,17 @@
 
 
 {% block content %}
-<h1>ID Guidatore: {{passenger.passenger_id}}</h1>
+<h1>ID Passeggero: {{passenger.passenger_id}}</h1>
 <hr>
 <h1>Nome: {{passenger.name}}</h1>
 <hr>
 <h1>Cognome: {{passenger.surname}}</h1>
 <div>
     <button>
-        <a href="{% url 'delete-passenger' passenger.passenger_id %}">Elimina</a>
+        <a href="{% url 'disconnect-passenger' passenger.passenger_id %}">Fai scendere dal bus</a>
     </button>
     <button>
-        <a href="{% url 'disconnect-passenger' passenger.passenger_id %}">Scollega dal bus</a>
+        <a href="{% url 'delete-passenger' passenger.passenger_id %}">Elimina</a>
     </button>
 <div>
 {% endblock content %}
