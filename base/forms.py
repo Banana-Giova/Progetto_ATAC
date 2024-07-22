@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import *
+from django import forms
 
 #-----Creation Tool Forms-----#
 
@@ -36,9 +37,11 @@ class BusToDriver(ModelForm):
         fields = ['assigned_bus']
 
 class LineToBus(ModelForm):
+    lines = forms.ModelMultipleChoiceField(queryset=Line.objects.all(), widget=forms.CheckboxSelectMultiple)
+    
     class Meta:
         model = Bus
-        fields = ['line']
+        fields = ['lines']
 
 class OrdinATACForm(ModelForm):
     class Meta:

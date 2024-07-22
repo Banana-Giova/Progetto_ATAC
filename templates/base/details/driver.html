@@ -1,20 +1,23 @@
 {% extends "main.html" %}
 
-
-
 {% block content %}
-<h1>ID Conducente: {{driver.driver_id}}</h1>
+<h1>ID Conducente: {{ driver.driver_id }}</h1>
 <hr>
-<h1>Nome: {{driver.name}}</h1>
+<h1>Nome: {{ driver.name }}</h1>
 <hr>
-<h1>Cognome: {{driver.surname}}</h1>
+<h1>Cognome: {{ driver.surname }}</h1>
 <hr>
-<h1>Bus Assegnato: {{bus}}</h1>
-    <hr>
-    <h3><a href="{% url 'create-bus_to_driver' driver.driver_id %}">Assegna un Bus a questo Conducente!</a></h3>
+<h1>Bus Assegnato: {{ driver.assigned_bus }}</h1>
+<hr>
+<h3>
+    <a href="{% url 'create-bus_to_driver' driver.driver_id %}">Assegna un Bus a questo Conducente!</a>
+</h3>
 <div>
     <button>
         <a href="{% url 'delete-driver' driver.driver_id %}">Elimina</a>
     </button>
-<div>
+    <button>
+        <a href="{% url 'remove-bus-from-driver' driver.driver_id %}">Scollega Bus</a>
+    </button>
+</div>
 {% endblock content %}

@@ -62,11 +62,14 @@ def line(request, line_number):
 
 def bus(request, bus_id):
     req_bus = Bus.objects.get(bus_id=bus_id)
-    if req_bus.line != None and req_bus.line != 'Non Assegnata':
-        req_line = req_bus.line.line_number
+    if req_bus.lines.exists():
+        
+        req_line_numbers = [line.line_number for line in req_bus.lines.all()]
+        req_line = ', '.join(req_line_numbers)  
     else:
         req_line = 'Non Assegnata'
-    context = {'bus':req_bus, 'line':req_line}
+
+    context = {'bus': req_bus, 'line': req_line}
     return render(request, "base/details/bus.html", context)
 
 def stop(request, stop_id):
@@ -170,14 +173,15 @@ def bus_to_driver(request, driver_id):
     return render(request, 'base/forms/bus_to_driver.html', context)
 
 def line_to_bus(request, bus_id):
-    bus = Bus.objects.get(bus_id=bus_id)
-    form = LineToBus()
+    bus = get_object_or_404(Bus, bus_id=bus_id)
     if request.method == 'POST':
         form = LineToBus(request.POST, instance=bus)
         if form.is_valid():
             form.save()
             return redirect('success')
-    context = {'form': form}
+    else:
+        form = LineToBus(instance=bus)
+    context = {'form': form, 'bus': bus}
     return render(request, 'base/forms/line_to_bus.html', context)
 
 def ordinatac(request):
@@ -236,3 +240,12 @@ def disconnect_passenger(request, passenger_id):
     passenger.bus = None
     passenger.save()
     return redirect("/")
+
+def remove_bus_from_driver(request, driver_id):
+    driver = get_object_or_404(Driver, pk=driver_id)
+    driver.assigned_bus = None
+    driver.save()
+    return redirect("/")  # Redireziona alla pagina di dettaglio del conducente
+
+def success(request):
+    return render(request, 'base/success.html')

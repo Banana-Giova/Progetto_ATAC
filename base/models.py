@@ -34,8 +34,8 @@ class OrdinATAC(models.Model):
     stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
 
 class Bus(models.Model):
-    bus_id:str = models.CharField(max_length=4, db_index=True, unique=True, primary_key=True)
-    line = models.ForeignKey(Line, null=True, on_delete=models.CASCADE)
+    bus_id = models.CharField(max_length=4, db_index=True, unique=True, primary_key=True)
+    lines = models.ManyToManyField(Line) 
     capacity = models.PositiveIntegerField()
     passengers = models.ManyToManyField(Passenger)
 
@@ -43,9 +43,9 @@ class Bus(models.Model):
         return self.bus_id
 
 class Driver(models.Model):
-    driver_id:str = models.CharField(max_length=12, db_index=True, unique=True, primary_key=True)
-    name:str = models.CharField(max_length=128)
-    surname:str = models.CharField(max_length=128)
+    driver_id = models.CharField(max_length=12, db_index=True, unique=True, primary_key=True)
+    name = models.CharField(max_length=128)
+    surname = models.CharField(max_length=128)
     assigned_bus = models.ForeignKey(Bus, null=True, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
