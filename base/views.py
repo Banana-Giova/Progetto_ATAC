@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 import django.http
+from django.db.models import Q
 from django.views import View
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
@@ -200,6 +201,29 @@ def ordinatac(request):
             return redirect('success')
     context = {'form': form}
     return render(request, 'base/forms/ordinatac_form.html', context)
+
+
+
+#-----Search-----#
+
+def search(request):
+    search = request.GET.get('search') if request.GET.get('search') != None else ''
+
+    passengers = list(Passenger.objects.filter(Q(passenger_id__icontains=search)|Q(name__icontains=search)|Q(surname__icontains=search)))
+    lines = list(Line.objects.filter(Q(line_number__icontains=search)|Q(name__icontains=search)))
+    stops = list(Stop.objects.filter(Q(stop_id__icontains=search)|Q(name__icontains=search)))
+    buses = list(Bus.objects.filter(Q(bus_id__icontains=search)))
+    drivers = list(Driver.objects.filter(Q(driver_id__icontains=search)|Q(name__icontains=search)|Q(surname__icontains=search)))
+
+    context = {
+        'passengers': passengers,
+        'lines': lines,
+        'stops': stops,
+        'buses': buses,
+        'drivers': drivers
+        }
+    return render(request, 'base/search.html', context) 
+
 
 
 

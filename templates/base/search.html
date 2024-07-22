@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<h1>~Cerca con ATAC!~</h1>
+<hr>
+
+
+
+<div>
+        <div>
+            {% for dude in passengers %}
+                <h2>ID Passeggero: <a href= "{% url 'passenger' dude.passenger_id  %}">{{dude.passenger_id}}</a></h2>
+                <br>
+            {% endfor %}
+            {% if passengers|length < 1 %}
+                Nessun passeggero corrisponde!
+            {% endif %}
+            <hr>
+        </div>
+        <div>
+            {% for line in lines %}
+                <h2>Linea {{line.line_number}} | <a href='{% url "line" line.line_number %}'>{{line.name}}</a></h2>
+                <br>
+            {% endfor %}
+            {% if lines|length < 1 %}
+                Nessuna linea corrisponde!
+            {% endif %}
+            <hr>
+        </div>
+        <div>
+            {% for stop in stops %}
+                <h2>ID Stop: <a href= "{% url 'stop' stop.stop_id  %}">{{stop.stop_id}}</a></h2>
+                <br>
+            {% endfor %}
+            {% if stops|length < 1 %}
+                Nessuno stop corrisponde!
+            {% endif %}
+            <hr>
+        </div>
+        <div>
+            {% for bus in buses %}
+                <h2>ID Bus: <a href= "{% url 'bus' bus.bus_id  %}">{{bus.bus_id}}</a></h2>
+                <br>
+            {% endfor %}
+            {% if buses|length < 1 %}
+                Nessun bus corrisponde!
+            {% endif %}
+            <hr>
+        </div>
+        <div>
+            {% for driver in drivers %}
+                <h2>ID Guidatore: <a href= "{% url 'driver' driver.driver_id  %}">{{driver.driver_id}}</a></h2>
+                <br>
+            {% endfor %}
+            {% if drivers|length < 1 %}
+                Nessun conducente corrisponde!
+            {% endif %}
+        </div>
+</div>
+
+{% endblock content %}

@@ -12,6 +12,10 @@
         <li><a href='{% url "passengers_list" %}'>Passeggeri</a></li>
         <li><a href='{% url "drivers_list" %}'>Conducenti</a></li>
         <li><a href='{% url "scioperi" %}'>Scioperi</a></li>
+
+        <form method="GET" action="{% url 'search' %}">
+            <input type="text" name="search" placeholder="Cerca con ATAC..."/>
+        </form>
         
     </ul>
 </nav>

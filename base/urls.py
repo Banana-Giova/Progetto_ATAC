@@ -41,6 +41,9 @@ urlpatterns = [
     path('delete-passenger/<str:passenger_id>', views.delete_passenger, name='delete-passenger'),
     path('delete-driver/<str:driver_id>', views.delete_driver, name='delete-driver'),
 
+#Search
+    path('search', views.search, name='search'),
+
 #Disassociazione 
     path('disconnect-passenger/<int:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
 
