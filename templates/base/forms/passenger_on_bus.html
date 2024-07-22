@@ -1,17 +1,10 @@
 {% extends "main.html" %}
 
 {% block content %}
-
-
-<div>
-    <h1>Scegli il Passeggero da far salire!</h1>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-    <input type="Submit" value="Submit"/>
-    </form>
-
-<div>
-
-
-{% endblock content %}
+<h1>Scegli un Passeggero su questo Bus!</h1>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Aggiungi Passeggeri">
+</form>
+{% endblock %}

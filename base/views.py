@@ -151,15 +151,22 @@ def create_driver(request):
 #-----Assignment Tool Forms-----#
 
 def passenger_on_bus(request, bus_id):
-    bus = Bus.objects.get(bus_id=bus_id)
-    form = PassengerOnBus()
+    bus = get_object_or_404(Bus, bus_id=bus_id)
+    
     if request.method == 'POST':
         form = PassengerOnBus(request.POST, instance=bus)
         if form.is_valid():
-            form.save()
+            passengers = form.cleaned_data['passengers']
+            bus.passengers.set(passengers)  
+            bus.save()
             return redirect('success')
-    context = {'form': form}
+    else:
+        form = PassengerOnBus(instance=bus)
+    
+    context = {'form': form, 'bus': bus}
     return render(request, 'base/forms/passenger_on_bus.html', context)
+
+
 
 def bus_to_driver(request, driver_id):
     driver = Driver.objects.get(driver_id=driver_id)

@@ -48,7 +48,12 @@ class OrdinATACForm(ModelForm):
         model = OrdinATAC
         fields = '__all__'
 
-class PassengerOnBus(ModelForm):
+class PassengerOnBus(forms.ModelForm):
+    passengers = forms.ModelMultipleChoiceField(
+        queryset=Passenger.objects.all(),
+        widget=forms.CheckboxSelectMultiple  
+    )
+
     class Meta:
         model = Bus
         fields = ['passengers']
