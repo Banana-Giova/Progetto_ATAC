@@ -45,10 +45,8 @@ urlpatterns = [
     path('search', views.search, name='search'),
 
 #Disassociazione 
-    path('disconnect-passenger/<int:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
-
+    path('disconnect-passenger/<str:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
     path('driver/<str:driver_id>/remove-bus/', views.remove_bus_from_driver, name='remove-bus-from-driver'),
-
     path('bus/<str:bus_id>/assign-lines/', views.line_to_bus, name='assign-lines-to-bus'),
     path('success/', views.success, name='success'), 
 ]

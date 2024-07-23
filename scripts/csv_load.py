@@ -13,6 +13,7 @@ def run():
     Driver.objects.all().delete()
 
     i = 0
+    errors:int = 0
     while i < 5:
         with open(f'scripts/data/load{i}.csv', 'r') as f:
             reader = csv.reader(f)
@@ -51,5 +52,8 @@ def run():
                         p, created = Driver.objects.get_or_create(
                             driver_id=row[0], name=row[1], surname=row[2])
                 except (IntegrityError, ValueError):
-                        continue
+                    errors += 1
+                    continue
             i += 1
+
+    print(f"{errors} entries invalid!")
