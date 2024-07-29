@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
-import django.http
 from django.db.models import Q
-from django.views import View
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse
 from .models import *
 from .forms import *
 
