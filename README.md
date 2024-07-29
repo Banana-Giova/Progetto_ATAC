@@ -7,12 +7,12 @@ Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
 
 # Setup:
 
-1. Type in your terminal:
+1. Type in your terminal:\
     ```source ATAC_venv/bin/activate```
 2. Download what's specified in the 'requirements.txt' file;
 3. Type in your terminal (without quotes):
     "python -m pip install django-extensions"
-4. To start the server type in your terminal:
+4. To start the server type in your terminal:\
     ```python manage.py runserver```
 
 
@@ -60,7 +60,7 @@ Script used to erase everything from the database.
 
 ### csv_load.py
 
-Script used to load onto the database every CSV file located in:
+Script used to load onto the database every CSV file located in:\
     ```Progetto_ATAC/scripts/data```
 
 The CSV file HAS to start with the correct header for its specific class to be imported:
