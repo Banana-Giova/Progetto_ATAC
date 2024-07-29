@@ -7,13 +7,13 @@ Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
 
 # Setup:
 
-1. Type in your terminal (without quotes):
-    "source ATAC_venv/bin/activate"
+1. Type in your terminal:
+    ```source ATAC_venv/bin/activate```
 2. Download what's specified in the 'requirements.txt' file;
 3. Type in your terminal (without quotes):
     "python -m pip install django-extensions"
-4. To start the server type in your terminal (without quotes):
-    "python manage.py runserver"
+4. To start the server type in your terminal:
+    ```python manage.py runserver```
 
 
 
@@ -25,7 +25,7 @@ Views used for basic features, like the homepage.
 ### List Pages
 
 Views used to list every instance of a specific class.*
-#### *The "Line" list is in the homepage.
+###### *The "Line" list is in the homepage.
 
 ### Detail Pages
 
