@@ -1,7 +1,8 @@
 from django.db import models
 
-"""class Stop:
-    pass"""
+
+
+#-----Models-----#
 
 class Passenger(models.Model):
     passenger_id:str = models.CharField(max_length=12, db_index=True, unique=True, primary_key=True)

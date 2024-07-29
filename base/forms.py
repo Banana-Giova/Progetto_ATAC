@@ -2,6 +2,8 @@ from django.forms import ModelForm
 from .models import *
 from django import forms
 
+
+
 #-----Creation Tool Forms-----#
 
 class BusForm(ModelForm):
@@ -28,6 +30,8 @@ class DriverForm(ModelForm):
     class Meta:
         model = Driver
         fields = ['driver_id', 'name', 'surname']
+
+
 
 #-----Assignment Tool Forms-----#
 

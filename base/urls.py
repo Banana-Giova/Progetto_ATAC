@@ -2,13 +2,15 @@ from django.urls import path
 from . import views
 from .views import disconnect_passenger
 
+
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('success', views.success, name='success'),
     path('create', views.create, name='create'),
     path('scioperi', views.scioperi, name='scioperi'),
 
-#Lists
+#Lists Pages paths
     path('stops_list', views.stops_list, name='stops_list'),
     path('bus_list', views.bus_list, name='bus_list'),
     path('passengers_list', views.passengers_list, name='passengers_list'),
@@ -41,10 +43,10 @@ urlpatterns = [
     path('delete-passenger/<str:passenger_id>', views.delete_passenger, name='delete-passenger'),
     path('delete-driver/<str:driver_id>', views.delete_driver, name='delete-driver'),
 
-#Search
+#Search Tool path
     path('search', views.search, name='search'),
 
-#Disassociazione 
+#Unassignment Tools paths 
     path('disconnect-passenger/<str:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
     path('driver/<str:driver_id>/remove-bus/', views.remove_bus_from_driver, name='remove-bus-from-driver'),
     path('bus/<str:bus_id>/assign-lines/', views.line_to_bus, name='assign-lines-to-bus'),
