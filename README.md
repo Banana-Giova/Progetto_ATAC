@@ -17,48 +17,48 @@ Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
 
 
 
-# Views
-## Basic Pages
+## Views
+### Basic Pages
 
 Views used for basic features, like the homepage.
 
-## List Pages
+### List Pages
 
 Views used to list every instance of a specific class.*
 #### *The "Line" list is in the homepage.
 
-## Detail Pages
+### Detail Pages
 
 Views used to show more details about a specific instance.
 
-## Creation Tool Forms
+### Creation Tool Forms
 
 Views used to create new instances of a specific class.
 
-## Assignment Tool Forms
+### Assignment Tool Forms
 
 Views used to assign instances to other instances.
 
-## Search
+### Search
 
 View used for the search bar.
 
-## Deletion Tool Forms
+### Deletion Tool Forms
 
 Views used to delete specific instances.
 
-## Unassignment Tool Forms
+### Unassignment Tool Forms
 
 Views used to unassign instances from instances.
 
 
 
-# Scripts
-## clean_db.py
+## Scripts
+### clean_db.py
 
 Script used to erase everything from the database.
 
-## csv_load.py
+### csv_load.py
 
 Script used to load onto the database every CSV file located in:
     ~Progetto_ATAC/scripts/data
