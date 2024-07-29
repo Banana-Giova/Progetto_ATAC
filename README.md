@@ -72,5 +72,5 @@ The CSV file HAS to start with the correct header for its specific class to be i
 - `Line:` line_number,name
 - `Stop:` stop_id,name,latitude,longitude
 - `Bus:` bus_id,capacity
-- `Driver:` driver_id,name,surname
+- `Driver:` driver_id,name,surname\
 In the specified folders there are valid CSV samples for each class.
