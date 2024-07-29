@@ -81,4 +81,4 @@ In the specified folder there are valid CSV samples for each class.
 
 ## Proof of Concept Screenshot
 
-[**SchermATAC**](https://github.com/Banana-Giova/Progetto_ATAC/blob/main/static/images/schermatac.png)
+![SchermATAC](https://github.com/Banana-Giova/Progetto_ATAC/blob/main/static/images/schermatac.png)
