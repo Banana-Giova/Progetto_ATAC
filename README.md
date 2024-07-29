@@ -78,3 +78,7 @@ The CSV file HAS to start with the correct header for its specific class to be i
 - `Driver:` driver_id,name,surname
 
 In the specified folder there are valid CSV samples for each class.
+
+## Proof of Concept Screenshot
+
+[**SchermATAC**](https://github.com/Banana-Giova/Progetto_ATAC/blob/main/static/images/schermatac.png)
