@@ -1,4 +1,7 @@
-# Progetto_ATAC
+![ATAC Logo](https://github.com/Banana-Giova/Progetto_ATAC/blob/main/static/images/Logo_ATAC.png)
+
+--------------------------------------------------------------------------------
+
 Progetto di simulazione del sistema di gestione database di ATAC.
 
 Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
