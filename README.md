@@ -65,9 +65,7 @@ Script used to erase everything from the database.
 ### csv_load.py
 
 Script used to load onto the database every CSV file located in:\
-    ```cmd
-    Progetto_ATAC/scripts/data
-    ```
+    ```Progetto_ATAC/scripts/data```
 
 The CSV file HAS to start with the correct header for its specific class to be imported:
 - `Passenger:` passenger_id,name,surname
