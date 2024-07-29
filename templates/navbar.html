@@ -13,7 +13,7 @@
         <li><a href='{% url "drivers_list" %}'>Conducenti</a></li>
         <li><a href='{% url "scioperi" %}'>Scioperi</a></li>
 
-        <form method="GET" action="{% url 'search' %}">
+        <form class="form" method="GET" action="{% url 'search' %}">
             <input type="text" name="search" placeholder="Cerca con ATAC..."/>
         </form>
         

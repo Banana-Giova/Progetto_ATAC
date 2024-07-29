@@ -51,6 +51,12 @@ a:hover{
     /* padding: 25px; */
     
 }
+.nav_bar form {
+    float: right;
+    padding-top: 7px;
+    width: 20%;
+    
+}
 main{
     margin-top: 20px;
     margin-right: 20px;
@@ -64,3 +70,14 @@ main{
     background-color:black;
     color: white;
 }
+
+input[type=text], select {
+    width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50px;
+  }
