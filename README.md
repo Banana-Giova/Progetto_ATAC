@@ -74,4 +74,4 @@ The CSV file HAS to start with the correct header for its specific class to be i
 - `Bus:` bus_id,capacity
 - `Driver:` driver_id,name,surname
 
-In the specified folders there are valid CSV samples for each class.
+In the specified folder there are valid CSV samples for each class.
