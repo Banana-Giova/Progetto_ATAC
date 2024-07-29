@@ -167,8 +167,6 @@ def passenger_on_bus(request, bus_id):
     context = {'form': form, 'bus': bus}
     return render(request, 'base/forms/passenger_on_bus.html', context)
 
-
-
 def bus_to_driver(request, driver_id):
     driver = Driver.objects.get(driver_id=driver_id)
     form = BusToDriver()
@@ -271,13 +269,10 @@ def disconnect_passenger(request, passenger_id):
     passenger = get_object_or_404(Passenger, pk=passenger_id)
     passenger.bus = None
     passenger.save()
-    return redirect("/")
+    return redirect("success")
 
 def remove_bus_from_driver(request, driver_id):
     driver = get_object_or_404(Driver, pk=driver_id)
     driver.assigned_bus = None
     driver.save()
-    return redirect("/")  # Redireziona alla pagina di dettaglio del conducente
-
-def success(request):
-    return render(request, 'base/success.html')
+    return redirect("success")
