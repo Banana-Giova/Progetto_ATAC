@@ -64,7 +64,7 @@ Script used to load onto the database every CSV file located in:
     ~Progetto_ATAC/scripts/data
 
 The CSV file HAS to start with the correct header for its specific class to be imported:
-- ==Passenger:== passenger_id,name,surname
+- `Passenger:` passenger_id,name,surname
 - Line: line_number,name
 - Stop: stop_id,name,latitude,longitude
 - Bus: bus_id,capacity
