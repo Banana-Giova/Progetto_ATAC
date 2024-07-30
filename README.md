@@ -69,7 +69,7 @@ Script used to erase everything from the database.
 
 ### csv_load.py
 
-Script used to load onto the database every CSV file located in:\
+Script used to load onto the database every CSV file, which is located in:\
     ```Progetto_ATAC/scripts/data```
 
 To write a CSV file in the correct format use this tool:\
