@@ -72,7 +72,10 @@ Script used to erase everything from the database.
 Script used to load onto the database every CSV file located in:\
     ```Progetto_ATAC/scripts/data```
 
-The CSV file HAS to start with the correct header for its specific class to be imported:
+To write a CSV file in the correct format use this tool:\
+    ```Progetto_ATAC/data/utility/CSV_Writer.py```
+
+If you want to write the CSV file yourself, remember that it HAS to start with the correct header for its specific class to be imported:
 - `Passenger:` passenger_id,name,surname
 - `Line:` line_number,name
 - `Stop:` stop_id,name,latitude,longitude
