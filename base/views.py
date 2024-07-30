@@ -264,12 +264,6 @@ def delete_passenger(request, passenger_id):
 
 #-----Unassignment Tool Forms-----#
 
-def disconnect_passenger(request, passenger_id):
-    passenger = get_object_or_404(Passenger, pk=passenger_id)
-    passenger.bus = None
-    passenger.save()
-    return redirect("success")
-
 def remove_bus_from_driver(request, driver_id):
     driver = get_object_or_404(Driver, pk=driver_id)
     multidriver = MultiDriver.objects.filter(driver=driver)

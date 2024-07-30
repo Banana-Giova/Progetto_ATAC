@@ -62,6 +62,7 @@ class PassengerOnBus(forms.ModelForm):
         queryset=Passenger.objects.all(),
         widget=forms.CheckboxSelectMultiple  
     )
+    passengers.required = False
 
     class Meta:
         model = Bus

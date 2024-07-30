@@ -11,8 +11,8 @@
     {% for stop in stops_list %}
 
         <div>
-            <h1>ID Stop: <a href= "{% url 'stop' stop.stop_id  %}">{{stop.stop_id}}</a></h1>
             <hr>
+            <h1>ID Stop: <a href= "{% url 'stop' stop.stop_id  %}">{{stop.stop_id}}</a></h1>
         </div>
 
     {% endfor %}

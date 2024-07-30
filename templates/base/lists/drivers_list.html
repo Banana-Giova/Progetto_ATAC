@@ -11,8 +11,8 @@
     {% for driver in drivers_list %}
 
         <div>
-            <h3>ID Guidatore: <a href= "{% url 'driver' driver.driver_id  %}">{{driver.driver_id}}</a></h3>
             <hr>
+            <h3>ID Guidatore: <a href= "{% url 'driver' driver.driver_id  %}">{{driver.driver_id}}</a></h3>
         </div>
 
     {% endfor %}

@@ -10,9 +10,6 @@
 <h1>Cognome: {{passenger.surname}}</h1>
 <div>
     <button>
-        <a href="{% url 'disconnect-passenger' passenger.passenger_id %}">Fai scendere dal bus</a>
-    </button>
-    <button>
         <a href="{% url 'delete-passenger' passenger.passenger_id %}">Elimina</a>
     </button>
 <div>

@@ -16,7 +16,9 @@ Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
     ```
 2. Download what's specified in the 'requirements.txt' file;
 3. Type in your terminal (without quotes):
-    "python -m pip install django-extensions"
+    ```cmd
+    python -m pip install django-extensions
+    ```
 4. To start the server type in your terminal:
     ```cmd
     python manage.py runserver

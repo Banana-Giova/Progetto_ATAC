@@ -17,9 +17,10 @@
         {% endif %}
     {% endfor %}
 </h2>
-<hr>
-<h3><a href="{% url 'create-passenger_on_bus' bus.bus_id %}">Fai salire un Passeggero su questo Bus!</a></h3>
 <div>
+    <button>
+        <a href="{% url 'create-passenger_on_bus' bus.bus_id %}">Fai salire o scendere un Passeggero dal Bus!</a>
+    </button>
     <button>
         <a href="{% url 'delete-bus' bus.bus_id %}">Elimina</a>
     </button>

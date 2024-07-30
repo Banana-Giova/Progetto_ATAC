@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .views import disconnect_passenger
 
 
 
@@ -48,7 +47,6 @@ urlpatterns = [
     path('stats/', views.stats, name='stats'),
 
 #Unassignment Tools paths 
-    path('disconnect-passenger/<str:passenger_id>/', disconnect_passenger, name='disconnect-passenger'),
     path('driver/<str:driver_id>/remove-bus/', views.remove_bus_from_driver, name='remove-bus-from-driver'),
     path('success/', views.success, name='success'), 
 ]
