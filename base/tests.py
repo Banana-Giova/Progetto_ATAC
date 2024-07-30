@@ -74,3 +74,19 @@ class ModelsTestCase(TestCase):
         self.assertEqual(ordinet.stop.name, "TESTuggine")
         self.assertEqual(ordinet.stop.latitude, 53.35)
         self.assertEqual(ordinet.stop.longitude, 35.53)
+
+
+
+    def test_livetratac(self):
+        testaccio = Line.objects.get(line_number="053")
+        cinque_tre = Bus.objects.get(bus_id="5353")
+        traphouse = LiveTrATAC.objects.create(
+            line=testaccio,
+            bus=cinque_tre
+        )
+
+        #Test for Line in an LivetrATAC
+        self.assertEqual(traphouse.line.name, "TESTaccio")
+
+        #Test for Stop in an LivetrATAC
+        self.assertEqual(traphouse.bus.capacity, 53)

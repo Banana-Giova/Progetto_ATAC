@@ -35,11 +35,6 @@ class DriverForm(ModelForm):
 
 #-----Assignment Tool Forms-----#
 
-class BusToDriver(ModelForm):
-    class Meta:
-        model = Driver
-        fields = ['assigned_bus']
-
 class LineToBus(ModelForm):
     lines = forms.ModelMultipleChoiceField(queryset=Line.objects.all(), widget=forms.CheckboxSelectMultiple)
     
@@ -50,6 +45,16 @@ class LineToBus(ModelForm):
 class OrdinATACForm(ModelForm):
     class Meta:
         model = OrdinATAC
+        fields = '__all__'
+
+class LiveTrATACForm(ModelForm):
+    class Meta:
+        model = LiveTrATAC
+        fields = '__all__'
+
+class MultiDriverForm(ModelForm):
+    class Meta:
+        model = MultiDriver
         fields = '__all__'
 
 class PassengerOnBus(forms.ModelForm):

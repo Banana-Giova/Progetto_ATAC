@@ -15,6 +15,16 @@
         {% endif %}
     {% endfor %}
 </h2>
+<hr>
+<h2>Bus: 
+    {% for combo in livetratac %}
+        {% if combo.line == line %}
+            <div>
+                <h4>{{combo.bus}}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+</h2>
 <div>
     <button>
         <a href="{% url 'delete-line' line.line_number %}">Elimina</a>

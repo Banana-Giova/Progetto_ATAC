@@ -53,19 +53,14 @@ def drivers_list(request):
 def line(request, line_number):
     req_line = Line.objects.get(line_number=line_number)
     ordinatac = OrdinATAC.objects.all()
-    context = {'line':req_line, 'ordinatac':ordinatac}
+    livetratac = LiveTrATAC.objects.all()
+    context = {'line':req_line, 'ordinatac':ordinatac, 'livetratac': livetratac}
     return render(request, "base/details/line.html", context)
 
 def bus(request, bus_id):
     req_bus = Bus.objects.get(bus_id=bus_id)
-    if req_bus.lines.exists():
-        
-        req_line_numbers = [line.line_number for line in req_bus.lines.all()]
-        req_line = ', '.join(req_line_numbers)  
-    else:
-        req_line = 'Non Assegnata'
-
-    context = {'bus': req_bus, 'line': req_line}
+    livetratac = LiveTrATAC.objects.all()
+    context = {'bus': req_bus, 'livetratac': livetratac}
     return render(request, "base/details/bus.html", context)
 
 def stop(request, stop_id):
@@ -81,11 +76,8 @@ def passenger(request, passenger_id):
 
 def driver(request, driver_id):
     req_driver = Driver.objects.get(driver_id=driver_id)
-    if req_driver.assigned_bus != None and req_driver.assigned_bus != 'Non Assegnato':
-        req_bus = req_driver.assigned_bus.bus_id
-    else:
-        req_bus = 'Non Assegnato'
-    context = {'driver':req_driver, 'bus':req_bus}
+    multidriver = MultiDriver.objects.all()
+    context = {'driver':req_driver, 'multidriver': multidriver}
     return render(request, "base/details/driver.html", context)
 
 
@@ -162,29 +154,6 @@ def passenger_on_bus(request, bus_id):
     context = {'form': form, 'bus': bus}
     return render(request, 'base/forms/passenger_on_bus.html', context)
 
-def bus_to_driver(request, driver_id):
-    driver = Driver.objects.get(driver_id=driver_id)
-    form = BusToDriver()
-    if request.method == 'POST':
-        form = BusToDriver(request.POST, instance=driver)
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    context = {'form': form}
-    return render(request, 'base/forms/bus_to_driver.html', context)
-
-def line_to_bus(request, bus_id):
-    bus = get_object_or_404(Bus, bus_id=bus_id)
-    if request.method == 'POST':
-        form = LineToBus(request.POST, instance=bus)
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    else:
-        form = LineToBus(instance=bus)
-    context = {'form': form, 'bus': bus}
-    return render(request, 'base/forms/line_to_bus.html', context)
-
 def ordinatac(request):
     form = OrdinATACForm()
     if request.method == 'POST':
@@ -194,6 +163,26 @@ def ordinatac(request):
             return redirect('success')
     context = {'form': form}
     return render(request, 'base/forms/ordinatac_form.html', context)
+
+def livetratac(request):
+    form = LiveTrATACForm()
+    if request.method == 'POST':
+        form = LiveTrATACForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/livetratac_form.html', context)
+
+def multidriver(request):
+    form = MultiDriverForm()
+    if request.method == 'POST':
+        form = MultiDriverForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    context = {'form': form}
+    return render(request, 'base/forms/multidriver_form.html', context)
 
 
 
@@ -217,6 +206,21 @@ def search(request):
         }
     return render(request, 'base/search.html', context) 
 
+def stats(request):
+    passenger_no = Passenger.objects.count()
+    line_no = Line.objects.count()
+    stop_no = Stop.objects.count()
+    bus_no = Bus.objects.count()
+    driver_no = Driver.objects.count()
+
+    context = {
+        'passenger_no': passenger_no,
+        'line_no': line_no,
+        'stop_no': stop_no,
+        'bus_no': bus_no,
+        'driver_no': driver_no
+    }
+    return render(request, 'base/stats.html', context)
 
 
 #-----Deletion Tool Forms-----#
@@ -268,6 +272,6 @@ def disconnect_passenger(request, passenger_id):
 
 def remove_bus_from_driver(request, driver_id):
     driver = get_object_or_404(Driver, pk=driver_id)
-    driver.assigned_bus = None
-    driver.save()
+    multidriver = MultiDriver.objects.filter(driver=driver)
+    multidriver.delete()
     return redirect("success")

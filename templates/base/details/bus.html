@@ -2,13 +2,22 @@
 
 {% block content %}
 
-<h1>ID del Bus: {{ bus.bus_id }} | Linea: {{ line }}</h1>
+<h1>ID del Bus: {{ bus.bus_id }}</h1>
 <hr>
 <h2>Capacità: {{ bus.capacity }}</h2>
 <hr>
 <h2>Numero di Passeggeri: {{ bus.passengers.count }}</h2>
 <hr>
-<h3><a href="{% url 'create-line_to_bus' bus.bus_id %}">Assegna una Linea a questo Bus!</a></h3>
+<h2>Linee: 
+    {% for combo in livetratac %}
+        {% if combo.bus == bus %}
+            <div>
+                <h4>{{combo.line}}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+</h2>
+<hr>
 <h3><a href="{% url 'create-passenger_on_bus' bus.bus_id %}">Fai salire un Passeggero su questo Bus!</a></h3>
 <div>
     <button>

@@ -7,14 +7,19 @@
 <hr>
 <h1>Cognome: {{ driver.surname }}</h1>
 <hr>
-<h1>Bus Assegnato: {{ driver.assigned_bus }}</h1>
+<h2>Bus: 
+    {% for combo in multidriver %}
+        {% if combo.driver == driver %}
+            <div>
+                <h4>{{combo.bus}}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+</h2>
 <hr>
 <div>
     <button>
-        <a href="{% url 'create-bus_to_driver' driver.driver_id %}">Assegna Bus</a>
-    </button>
-    <button>
-        <a href="{% url 'remove-bus-from-driver' driver.driver_id %}">Scollega Bus</a>
+        <a href="{% url 'remove-bus-from-driver' driver.driver_id %}">Manda in vacanza il conducente!</a>
     </button>
     <button>
         <a href="{% url 'delete-driver' driver.driver_id %}">Elimina</a>
