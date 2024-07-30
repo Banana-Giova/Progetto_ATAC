@@ -15,7 +15,7 @@ Progetto creato da Giovanni di Giuseppe e Oussama Hliwa.
     source ATAC_venv/bin/activate
     ```
 2. Download what's specified in the 'requirements.txt' file;
-3. Type in your terminal (without quotes):
+3. Type in your terminal:
     ```cmd
     python -m pip install django-extensions
     ```
